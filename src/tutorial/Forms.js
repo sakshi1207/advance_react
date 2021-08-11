@@ -6,12 +6,28 @@ import React,{useState} from 'react'
 //we will use type submit but its same as onclick functionality
 function Forms() {
     const [firstName,setFirstname] = useState("");
-    const [email,setEmail] = useState("");
+    const [email,setEmail] = useState(" ");
+    const [people,setPeople] = useState([]);
 
     const handleSubmit = (e) => {
          e.preventDefault();//use to prevent default behaviour of our browser
-        console.log('hello world');
+        if (firstName && email) {
+            // console.log('submit');
+            const person = {firstName:firstName,email:email}
+            // console.log(person);
+            setPeople((people) =>{
+                return[...people,person]
+            });
+            setFirstname('');
+            setEmail('');
+        }else{
+            console.log('empty');
+        }
+         console.log(firstName,email);
     }
+
+
+
     return (
         <>
         <article>
@@ -27,7 +43,9 @@ function Forms() {
                 <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
             </div>
 
-            <button  type="submit">Submit</button>
+            <button 
+            
+            type="submit">Submit</button>
             </form>
         </article>
 
