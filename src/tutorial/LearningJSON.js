@@ -21,7 +21,7 @@ function LearningJSON() {
 }
 
     const getUsers = () =>{
-        axios.get("http://localhost:4000/users").then(users =>{  //getting data from json file and store it in users and console it
+        axios.get("http://localhost:4000/users").then(users =>{  //getting data from json file and store it in users and console i
             console.log(users);
         })
     }
