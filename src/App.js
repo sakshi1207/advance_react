@@ -1,6 +1,7 @@
 import React from 'react';
 // import MyToDoList from './tutorial/MyToDoList';
-import LearningJSON from './tutorial/LearningJSON';
+// import LearningJSON from './tutorial/LearningJSON';
+import Index from './tutorial/Reducer';
 // import Forms from './tutorial/Forms';
 // import UseEffectBasic from './tutorial/UseEffectBasic';
 //import UseStateCounter from './tutorial/UseStateCounter';
@@ -21,7 +22,8 @@ function App(){
        {/* <UseStateCounter /> */}
        {/* <UseEffectBasic /> */}
        {/* <Forms /> */}
-       <LearningJSON />
+       {/* <LearningJSON /> */}
+      <Index />
        {/* <MyToDoList /> */}
         </div>
     );
