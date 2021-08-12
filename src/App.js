@@ -1,5 +1,7 @@
 import React from 'react';
-import Forms from './tutorial/Forms';
+// import MyToDoList from './tutorial/MyToDoList';
+import LearningJSON from './tutorial/LearningJSON';
+// import Forms from './tutorial/Forms';
 // import UseEffectBasic from './tutorial/UseEffectBasic';
 //import UseStateCounter from './tutorial/UseStateCounter';
 //import UseStateObject from './tutorial/UseStateObject';
@@ -18,7 +20,9 @@ function App(){
        {/* <UseStateObject />      */}
        {/* <UseStateCounter /> */}
        {/* <UseEffectBasic /> */}
-       <Forms />
+       {/* <Forms /> */}
+       <LearningJSON />
+       {/* <MyToDoList /> */}
         </div>
     );
 }
