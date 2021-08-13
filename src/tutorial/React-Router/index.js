@@ -23,6 +23,9 @@ function ReactRouterDom() {
                 <Route path="/people">
                     <People />
                 </Route>
+                <Route path="/person/:id" children={Person}>
+                    <Person />
+                </Route>
                 <Route path="*">
                     {/* // this is going to show in every page , to remove this wrap all route in switch */}
                     <Error />

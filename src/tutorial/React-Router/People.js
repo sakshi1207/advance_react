@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
  import {data} from '../data';
+ import {Link} from "react-router-dom";
 
 function People() {
     const [people,setPeople]= useState(data);
@@ -11,6 +12,7 @@ function People() {
                     return (
                         <div key={person.id} className="item">
                             <h4>{person.name}</h4>
+                            <Link to={`/person/${person.id}`}> learn More</Link>
                         </div>
                     )
                 })
