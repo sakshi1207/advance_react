@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactRouterDom from './tutorial/React-Router';
 // import MyToDoList from './tutorial/MyToDoList';
 // import LearningJSON from './tutorial/LearningJSON';
-import Index from './tutorial/Reducer';
+// import Index from './tutorial/Reducer';
 // import Forms from './tutorial/Forms';
 // import UseEffectBasic from './tutorial/UseEffectBasic';
 //import UseStateCounter from './tutorial/UseStateCounter';
@@ -13,7 +14,7 @@ import Index from './tutorial/Reducer';
 function App(){
     return(
         <div className='container'>
-            <h2>Advance React js</h2>
+            {/* <h2>Advance React js</h2> */}
             {/* <UseStateErrorEx /> */}
             {/* <UseStateBasic /> */}
 
@@ -23,7 +24,8 @@ function App(){
        {/* <UseEffectBasic /> */}
        {/* <Forms /> */}
        {/* <LearningJSON /> */}
-      <Index />
+      {/* <Index /> */}
+      <ReactRouterDom />
        {/* <MyToDoList /> */}
         </div>
     );
