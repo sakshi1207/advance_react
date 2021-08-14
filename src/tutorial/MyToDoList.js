@@ -1,61 +1,46 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
 function MyToDoList() {
-    const [itemName,setItemName] = useState([" "]);
-    const [lists,setList] = useState([]);
+    const [events, setEvents] = useState("");
+    const [list, setList] = useState([]);
+    const deleteEvent = (id) => {
+        let data = list.filter((x) => x.id != id)
+        setList(data);
+    }
 
-
-    // const deleteItem = (id) => {
-    //     let setItem = lists.filter((items) => items.id != id)
-    //     setList(setItem)
-    // }
-
-    const addList = (e) => {
+    const handleEvent = (e) => {
         e.preventDefault();
-        if(itemName){
-        console.log("adding");
+        if (events) {
+            console.log(events);
 
-        const items={itemName:itemName}
-        console.log(items);
-        setList((lists) =>{
-            return[...lists,items]
-        });
-        setList('');
-    }else{
-        console.log('write something in list');
-    }
-    console.log(itemName);
-        
-    }
+            const items = { id:new Date().getTime().toString(),events };
 
+            setList((list) => {
+                return [...list, items]
+            });
+            // setList('');
+        } else {
+            console.log("entervalue");
+        }
+    }
     return (
         <>
-        <h2>My ToDo List</h2>
-        
-        <article>
-            <form className='form' onSubmit={addList}>
-                <div className='form-control'>
-                    <input type="text" id="itemName" name="itemName" value={itemName} onChange={(e) => setItemName(e.target.value)}></input>
-
-                </div>
-                <div className='form-control'>
-                    <button type="submit">Add to List</button>
-
-                </div>
-            </form>
-            {
-                lists.map( (items)=>{
-                    const {itemName} = items;
-                    return(
-                        <div className="item" >
-                            <h4>{itemName}</h4>
-                            
-                        {/* <button onClick={() => deleteItem(id)}>Delete</button> */}
+            <article>
+                <form className="form" onSubmit={handleEvent}>
+                    <div className="form-control">
+                        <label>Add Item :</label>
+                        <input type="text" value={events} onChange={(e) => setEvents(e.target.value)}></input>
+                    </div>
+                    <button type="submit">Add Item</button>
+                </form>
+                {list.map((items) => {
+                    return (
+                        <div key={items.id} className="item">{items.events}
+                            <button onClick={() => { deleteEvent(items.id) }}>delete</button>
                         </div>
                     )
-                })
-            }
-        </article>
+                })}
+            </article>
         </>
     )
 }

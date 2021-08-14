@@ -28,8 +28,6 @@ function Forms() {
          console.log(firstName,email);
     }
 
-
-
     return (
         <>
         <article>
@@ -45,9 +43,7 @@ function Forms() {
                 <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
             </div>
 
-            <button 
-            
-            type="submit">Submit</button>
+            <button type="submit">Submit</button>
             </form>
             {
                 people.map((person,index) =>{
